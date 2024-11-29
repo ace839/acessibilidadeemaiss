@@ -17,8 +17,8 @@
             margin: 0;
             padding: 0;
         }
-        
-        /* Estilo para a logo substituindo o cabeçalho */
+
+        /* Estilo para a logo */
         .logo {
             background-color: rgba(138, 43, 226, 0.7); /* Cor roxa translúcida para o fundo */
             padding: 30px;
@@ -26,58 +26,37 @@
         }
 
         .logo img {
-            max-width: 650px; /* Aumentando o tamanho da logo para 650px */
+            width: 100%; /* A logo vai ocupar 100% da largura do container */
+            max-width: 650px; /* Mas não ultrapassará 650px */
+            height: auto; /* Mantém a proporção da imagem */
             display: block;
             margin: 0 auto;
         }
 
-        /* Estilo para o quadrado interativo */
-        .quem-somos {
-            background-color: rgba(230, 168, 215, 0.9); /* Roxo claro com leve transparência */
-            color: #4b0082; /* Texto lilás escuro */
-            margin: 20px auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .quem-somos h2 {
-            font-size: 2rem;
-            text-align: center;
-        }
-
-        .quem-somos p {
-            font-size: 1rem;
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-        /* Estilo para o bloco de cursos */
-        .curso-libras {
+        /* Estilo para os blocos de conteúdo */
+        .quem-somos, .curso-libras, .podcasts, .denuncias {
             background-color: rgba(230, 168, 215, 0.9); /* Roxo claro com leve transparência */
             color: #4b0082;
             margin: 20px auto;
             padding: 20px;
-            width: 80%;
+            width: 90%; /* Usando porcentagem para responsividade */
             max-width: 800px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .curso-libras h2 {
+        /* Ajustes de fonte para responsividade */
+        h2 {
             font-size: 2rem;
             text-align: center;
         }
 
-        .curso-libras p {
+        p, ul, li {
             font-size: 1rem;
             line-height: 1.6;
             text-align: justify;
         }
 
-        /* Estilo do botão */
         .btn-curso {
             display: inline-block;
             background-color: #4b0082; /* Cor roxa escura */
@@ -95,32 +74,7 @@
             background-color: #6a0dad; /* Tom mais claro de roxo */
         }
 
-        /* Estilo para a seção de Podcasts */
-        .podcasts {
-            background-color: rgba(230, 168, 215, 0.9); /* Roxo claro com leve transparência */
-            color: #4b0082;
-            margin: 20px auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .podcasts h2 {
-            font-size: 2rem;
-            text-align: center;
-        }
-
-        .podcasts iframe {
-            width: 100%;
-            height: 315px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 10px;
-        }
-
-        /* Estilo para o rodapé com "Todos os direitos reservados" */
+        /* Estilo para o rodapé */
         footer {
             background-color: rgba(138, 43, 226, 0.7); /* Cor roxa */
             padding: 20px;
@@ -134,94 +88,96 @@
             font-size: 1rem;
         }
 
-        /* Estilos de responsividade */
-        @media (max-width: 768px) {
-            .quem-somos, .curso-libras, .podcasts {
-                width: 90%;
+        /* Estilo para o bloco de Podcasts */
+        .podcasts iframe {
+            width: 100%;
+            height: 315px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Responsividade: Ajustes para telas menores */
+        @media (max-width: 1024px) {
+            /* Tablets e telas médias */
+            .quem-somos, .curso-libras, .podcasts, .denuncias {
+                width: 90%; /* Ajusta a largura para ocupar mais a tela em dispositivos médios */
             }
         }
 
-        /* Estilo para a seção de "Denúncias" */
-        .denuncias {
-            background-color: rgba(230, 168, 215, 0.9); /* Roxo claro com leve transparência */
-            color: #4b0082;
-            margin: 20px auto;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        @media (max-width: 768px) {
+            /* Telas menores (ex: tablets em modo retrato) */
+            .logo img {
+                max-width: 80%; /* Reduz a largura da logo */
+            }
+
+            .quem-somos, .curso-libras, .podcasts, .denuncias {
+                width: 90%; /* Reduz o tamanho dos blocos de conteúdo */
+                padding: 15px; /* Reduz o padding para dispositivos móveis */
+            }
+
+            h2 {
+                font-size: 1.8rem; /* Reduz o tamanho do título */
+            }
+
+            p, ul, li {
+                font-size: 1rem; /* Ajuste de tamanho para textos */
+            }
+
+            .btn-curso {
+                padding: 10px 20px; /* Reduz o tamanho do botão */
+                font-size: 1.1rem; /* Ajusta o tamanho da fonte no botão */
+            }
         }
 
-        .denuncias h2 {
-            font-size: 2rem;
-            text-align: center;
+        @media (max-width: 480px) {
+            /* Telas pequenas (ex: celulares) */
+            .logo img {
+                max-width: 75%; /* Logo ainda menor para se ajustar em celulares */
+            }
+
+            .quem-somos, .curso-libras, .podcasts, .denuncias {
+                width: 95%; /* Ocupa mais largura da tela */
+                padding: 10px; /* Reduz o padding */
+            }
+
+            h2 {
+                font-size: 1.5rem; /* Ajuste para títulos menores */
+            }
+
+            p, ul, li {
+                font-size: 0.9rem; /* Ajuste de fonte para textos menores */
+            }
+
+            .btn-curso {
+                padding: 8px 16px; /* Botão menor */
+                font-size: 1rem; /* Fonte do botão ajustada */
+            }
         }
 
-        .denuncias ul {
-            list-style-type: none;
-            padding: 0;
-        }
+        @media (max-width: 375px) {
+            /* Telas muito pequenas, como smartphones antigos */
+            .logo img {
+                max-width: 70%; /* Logo ainda menor */
+            }
 
-        .denuncias li {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
+            .quem-somos, .curso-libras, .podcasts, .denuncias {
+                width: 95%;
+                padding: 8px;
+            }
 
-        .denuncias a {
-            color: #4b0082;
-            text-decoration: none;
-            font-weight: bold;
-        }
+            h2 {
+                font-size: 1.4rem;
+            }
 
-        .denuncias a:hover {
-            text-decoration: underline;
-        }
+            p, ul, li {
+                font-size: 0.9rem;
+            }
 
-        /* Estilo para os campos do formulário de mensagem */
-        form {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        /* Campo de texto e email */
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 18px; /* Aumentando o padding */
-            margin-bottom: 20px; /* Maior espaço entre os campos */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1.1rem; /* Aumentando o tamanho da fonte */
-            box-sizing: border-box;
-        }
-
-        /* Foco nos campos */
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #4b0082;
-            box-shadow: 0 0 5px rgba(75, 0, 130, 0.7);
-        }
-
-        /* Botão de envio */
-        button[type="submit"] {
-            background-color: #4b0082;
-            color: white;
-            padding: 18px 24px;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Efeito de hover no botão */
-        button[type="submit"]:hover {
-            background-color: #6a0dad;
+            .btn-curso {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -240,7 +196,7 @@
         <p>Nosso objetivo é promover uma visão inclusiva e enfrentar desafios relacionados à acessibilidade com soluções práticas e eficazes. Queremos assegurar que todos, independentemente de suas condições, tenham acesso equitativo às oportunidades e recursos disponíveis. Estamos aqui para fazer a diferença e criar um mundo mais acessível e inclusivo. Muito prazer, somos o grupo Acessibilidade+!</p>
     </div>
 
-    <!-- Seção "Podcasts" -->
+    <!-- Seção "Podcasts" - Ajustado para ficar um abaixo do outro -->
     <div class="podcasts">
         <h2>Podcasts</h2>
         <iframe src="https://www.youtube.com/embed/0bTtH1rrRW4" title="Podcast 1"></iframe>
@@ -266,6 +222,7 @@
             <li>Entrar em contato pelo WhatsApp: (34) 99708-6180</li>
             <li>Enviar um e-mail para: <a href="mailto:acessibilidademai8@gmail.com">acessibilidademai8@gmail.com</a></li>
         </ul>
+
         <h3>Contato</h3>
         <p>Para mais informações, entre em contato conosco:</p>
         <ul>
